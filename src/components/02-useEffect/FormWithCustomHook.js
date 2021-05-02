@@ -9,19 +9,44 @@ export const FormWithCustomHook = () => {
     const [formValues, handleInpustChange] = useForm({
         name:'',
         email:'',
-        password:''
+        password:'',
+        loading: false
     })
 
-    const {name,  email, password} = formValues
+    let {name,  email, password, loading } = formValues
 
-    useEffect(() => {
-        console.log('Email cambio');        
-    }, [email])
   
-    const handleSubmit = (e) =>{
-        e.preventDefault();
-        console.log(formValues);
+    useEffect(() => {
+      if(name.length === 0 || name === undefined ){
+        loading = false    
+        console.log(loading);      
+        console.log('consume leng')            
+      }
+      return () =>{
+        console.log(name.length);
+        loading= true  
+        console.log(loading);      
         
+      }
+        // console.log('Nombre cambio');        
+        // console.log('Email cambio');        
+    }, [name])
+  
+    const handleSubmit = (e) =>{            
+      
+        if(email.length == 0 || name === undefined ){
+          loading = false          
+          console.log('consume leng')            
+        }
+        if(password.length == 0 || name === undefined ){
+          loading = false          
+          console.log('consume leng')            
+        }
+        else{                    
+          console.log('Error');
+          e.preventDefault();
+          console.log(formValues);
+        }
     }
     return (
         <form onSubmit={handleSubmit}>
@@ -37,9 +62,9 @@ export const FormWithCustomHook = () => {
                 placeholder="nombres"
                 value = {name}
                 onChange= {handleInpustChange}
-              />
-              
+              />              
             </div>
+            { loading ? 'debe de ingresar algo' :'123'  }
             <br/>
             <div className="form-group">
               <input 
@@ -65,9 +90,12 @@ export const FormWithCustomHook = () => {
               />              
             </div>
             
-        <button type="submit" className="btn btn-primary">
+            <button type="submit" className="btn btn-primary">
             Guardar
         </button>
+        {/* {name.length > 3 && email.length > 3 ? <button type="submit" className="btn btn-primary">
+            Guardar
+        </button> : '' } */}
 
         </form>
     )

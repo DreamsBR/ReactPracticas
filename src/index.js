@@ -4,13 +4,16 @@ import { FormWithCustomHook } from './components/02-useEffect/FormWithCustomHook
 // import { CounterApp } from './components/01-useState/CounterApp';
 // import { CounterWithHook } from './components/01-useState/CounterWithHook';
 import { SimgleForm } from './components/02-useEffect/SimgleForm';
+import { MultipleCustomHooks } from './components/03-examples/MultipleCustomHooks';
+import { FocusScreen } from './components/04-useRef/FocusScreen';
+import { RealExample } from './components/04-useRef/RealExample';
+import { Layout } from './components/05-useLayoutEffect/Layout';
+import { Memorize } from './components/06-memos/Memorize';
 // import { HookApp } from './HookApp';
 import './index.css';
 
-
-
 ReactDOM.render(
-  <FormWithCustomHook/>,
+  <Memorize/>,
   document.getElementById('root')
 );
 
