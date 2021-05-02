@@ -8,12 +8,15 @@ import { MultipleCustomHooks } from './components/03-examples/MultipleCustomHook
 import { FocusScreen } from './components/04-useRef/FocusScreen';
 import { RealExample } from './components/04-useRef/RealExample';
 import { Layout } from './components/05-useLayoutEffect/Layout';
+import { CallBackHook } from './components/06-memos/CallBackHook';
+import { MemoHoook } from './components/06-memos/MemoHook';
 import { Memorize } from './components/06-memos/Memorize';
+import { Padre } from './components/07-tarea-memo/Padre';
 // import { HookApp } from './HookApp';
 import './index.css';
 
 ReactDOM.render(
-  <Memorize/>,
+  <Padre/>,
   document.getElementById('root')
 );
 
