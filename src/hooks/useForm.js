@@ -4,7 +4,9 @@ export const useForm = (initialState = {}) => {
     
     const [values, setvalues] = useState(initialState);
 
-  
+    const reseToDo=()=>{
+        setvalues(initialState)
+    }
 
     const handleInpustChange = ({target}) => {
         
@@ -14,6 +16,6 @@ export const useForm = (initialState = {}) => {
         }));
     }
 
-    return [ values, handleInpustChange ]
+    return [ values, handleInpustChange, reseToDo ]
 
 }
